@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MedMvc.Core.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,8 @@ namespace MedMMvc.Controllers
     {
         public ActionResult Index()
         {
+            UserService svc = new UserService();
+            var users = svc.Get();
             return View();
         }
 

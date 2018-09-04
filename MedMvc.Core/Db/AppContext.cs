@@ -11,5 +11,6 @@ namespace MedMvc.Core.Db
     public class AppContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Campaign> Campaigns { get; set; }
     }
 }

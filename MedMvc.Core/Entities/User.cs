@@ -13,3 +13,4 @@ namespace MedMvc.Core.Entities
         public bool Locked { get; set; }
     }
 }
+ 
