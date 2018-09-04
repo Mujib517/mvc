@@ -1,4 +1,5 @@
 ﻿using MedMvc.Core.Entities;
+using MedMvc.Core.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,5 +37,15 @@ namespace MedMvc.Core.Services
             _db.SaveChanges();
         }
 
+        public User ValidateUser(User user)
+        {
+            var dbUser = _db.Users.FirstOrDefault(u => u.Username == user.Username);
+
+            if (dbUser == null || dbUser.Password != user.Password) throw new InvalidCredentialsException();
+            if (!dbUser.Active) throw new AccountInActiveException();
+            if (dbUser.Locked) throw new AccountLockedException();
+
+            return dbUser;
+        }
     }
 }
