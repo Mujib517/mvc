@@ -20,4 +20,13 @@ namespace MedMvc.Core.Entities
         Dispatch,
         Reject
     }
+
+    public enum Role
+    {
+        CallCenterExecutive,
+        DispatcherExecutive,
+        Manager,
+        Admin,
+        SuperAdmin
+    }
 }

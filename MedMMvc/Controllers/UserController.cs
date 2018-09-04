@@ -14,7 +14,7 @@ namespace MedMMvc.Controllers
         private UserService _userSvc = null;
         public UserController()
         {
-            userSvc = new UserService();
+            _userSvc = new UserService();
         }
         [HttpGet]
         public ActionResult Login()
