@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace MedMvc.Core.Services
 {
-    public class Campaign_Serv
+    public class CampaignService
     {
 
         private Db.AppContext _db;
-        public Campaign_Serv()
+        public CampaignService()
         {
             _db = new Db.AppContext();
         }
